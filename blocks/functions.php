@@ -43,7 +43,7 @@ function createissue($description) {    // Функция для создани�
     // Подготовка и отправка запроса в Jira
     $curl = curl_init();
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://prontosms.atlassian.net/rest/servicedeskapi/request',
+        CURLOPT_URL => 'https://'.$organization.'.atlassian.net/rest/servicedeskapi/request',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -61,8 +61,8 @@ function createissue($description) {    // Функция для создани�
     "summary": "Запрос из Telegram бота от '.$data_issue.'",
     "description": "'.$description.'",
     "priority": {
-        "self": "https://prontosms.atlassian.net/rest/api/2/priority/4",
-        "iconUrl": "https://prontosms.atlassian.net/images/icons/priorities/low.svg",
+        "self": "https://'.$organization.'.atlassian.net/rest/api/2/priority/4",
+        "iconUrl": "https://'.$organization.'.atlassian.net/images/icons/priorities/low.svg",
         "name": "Текущие",
         "id": "4"
     }
@@ -232,7 +232,7 @@ function create_comment_jira($text,$issueId) { // Создание коммен�
     // Подготовка и отправка комментария в Jira
     $curl = curl_init();
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://prontosms.atlassian.net/rest/servicedeskapi/request/'.$issueId.'/comment',
+        CURLOPT_URL => 'https://'.$organization.'.atlassian.net/rest/servicedeskapi/request/'.$issueId.'/comment',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
