@@ -29,3 +29,13 @@
 ``ALTER USER 'jira-telegram-integration'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;``
 
 ``GRANT ALL PRIVILEGES ON `jira-telegram-integration`.* TO 'jira-telegram-integration'@'localhost';``
+
+Укажите значения для переменных из раздела "База данных" в файле /blocks/variables.php. Для данного примера:
+
+``$db_login = 'jira-telegram-integration'; // Логин для подключения к БД``
+
+``$db_pass = '***'; // Пароль для подключения к БД``
+
+``$db_name = 'jira-telegram-integration'; // Название БД``
+
+
