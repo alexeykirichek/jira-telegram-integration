@@ -11,3 +11,13 @@
 `git clone https://github.com/alexeykirichek/jira-telegram-integration.git`
 
 Создайте базу данных:
+
+`mysql -u root -p`
+
+``CREATE DATABASE `jira-telegram-integration` DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;``
+
+Импортируйте структуру (файл "jira-telegram-integration.sql" в корне проекта):
+
+``use `jira-telegram-integration` ``
+
+`source path/to/jira-telegram-integration.sql;` ("path/to" замените на реальный путь)
