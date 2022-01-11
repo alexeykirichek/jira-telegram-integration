@@ -21,3 +21,11 @@
 ``use `jira-telegram-integration` ``
 
 `source path/to/jira-telegram-integration.sql;` ("path/to" замените на реальный путь)
+
+Создайте пользователя и настройте ему права для доступа к данной БД:
+
+``CREATE USER 'jira-telegram-integration'@'localhost' IDENTIFIED WITH mysql_native_password BY '***';GRANT USAGE ON *.* TO 'jira-telegram-integration'@'localhost';``
+
+``ALTER USER 'jira-telegram-integration'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;``
+
+``GRANT ALL PRIVILEGES ON `jira-telegram-integration`.* TO 'jira-telegram-integration'@'localhost';``
